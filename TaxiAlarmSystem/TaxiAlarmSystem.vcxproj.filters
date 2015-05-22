@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource files">
+      <UniqueIdentifier>{454746fc-3ada-4dab-893c-653d183ee86a}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Make files">
+      <UniqueIdentifier>{6bef11b4-015a-4b23-bc1e-eafaeeb92db3}</UniqueIdentifier>
+      <Extensions>*.mak</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{6ba41381-954c-4a3e-86f3-cec2496e7b7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\camera">
+      <UniqueIdentifier>{ad115287-3525-4cd0-a69c-fd3f2c8b8be1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\comm">
+      <UniqueIdentifier>{3cf86d5d-ba65-493c-8707-91cb63c98fd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gps">
+      <UniqueIdentifier>{9cb0718e-3f4b-491b-8d74-dff27b4a4741}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ini">
+      <UniqueIdentifier>{592ecb58-da5d-48b4-a5c5-3edad5152edb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\log">
+      <UniqueIdentifier>{ce70b870-368d-49b6-b574-cd2e6b1e1bdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\main">
+      <UniqueIdentifier>{bd895c03-9247-4dbd-bac8-af09198eda75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui">
+      <UniqueIdentifier>{663213d6-db6e-45fc-98d9-1cdb415d588f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\utils">
+      <UniqueIdentifier>{d01a2b74-2201-404f-a5c9-ee257567c299}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\pic">
+      <UniqueIdentifier>{314bd1a2-7585-4c42-9773-14ded41f1df3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\config">
+      <UniqueIdentifier>{5f854740-23f2-42cf-aa83-0cdc37594963}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\harvest">
+      <UniqueIdentifier>{76f2ae78-2ddc-43b9-b930-dc00e519691f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="gps.c">
+      <Filter>src\gps</Filter>
+    </ClCompile>
+    <ClCompile Include="rgb2bmp.c">
+      <Filter>src\pic</Filter>
+    </ClCompile>
+    <ClCompile Include="v4l.c">
+      <Filter>src\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="send_data.c">
+      <Filter>src\harvest</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>src\main</Filter>
+    </ClCompile>
+    <ClCompile Include="utils.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="log.cpp">
+      <Filter>src\log</Filter>
+    </ClCompile>
+    <ClCompile Include="minIni.cpp">
+      <Filter>src\ini</Filter>
+    </ClCompile>
+    <ClCompile Include="CASys.cpp">
+      <Filter>src\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="config.cpp">
+      <Filter>src\config</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+    <None Include="debug.mak">
+      <Filter>Make files</Filter>
+    </None>
+    <None Include="release.mak">
+      <Filter>Make files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="gps.h">
+      <Filter>src\gps</Filter>
+    </ClInclude>
+    <ClInclude Include="rgb2bmp.h">
+      <Filter>src\pic</Filter>
+    </ClInclude>
+    <ClInclude Include="v4l.h">
+      <Filter>src\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="send_data.h">
+      <Filter>src\harvest</Filter>
+    </ClInclude>
+    <ClInclude Include="pub.h">
+      <Filter>src\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="log.h">
+      <Filter>src\log</Filter>
+    </ClInclude>
+    <ClInclude Include="macro_define.h">
+      <Filter>src\log</Filter>
+    </ClInclude>
+    <ClInclude Include="comm.h">
+      <Filter>src\comm</Filter>
+    </ClInclude>
+    <ClInclude Include="minIni.h">
+      <Filter>src\ini</Filter>
+    </ClInclude>
+    <ClInclude Include="minGlue.h">
+      <Filter>src\ini</Filter>
+    </ClInclude>
+    <ClInclude Include="CASys.h">
+      <Filter>src\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>src\config</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
