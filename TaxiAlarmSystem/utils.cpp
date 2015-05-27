@@ -4,7 +4,12 @@
 #include <string.h>
 #include "zlib.h"
 #include "comm.h"
+
+#ifdef __cplusplus
+extern "C" {
 #include "log.h"
+}
+#endif
 
 namespace oautils{
 const int MAX_COMPRESS_BUF_SIZE = 65536;

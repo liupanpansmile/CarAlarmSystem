@@ -23,7 +23,7 @@ error:
 	$(error Invalid configuration, please check your inputs)
 endif
 
-SOURCEFILES := gps.c mpdc.cpp rgb2bmp.c send_data.c v4l.c
+SOURCEFILES := gps.c main.cpp CASys.cpp rgb2bmp.c send_data.c v4l.c
 EXTERNAL_LIBS := 
 EXTERNAL_LIBS_COPIED := $(foreach lib, $(EXTERNAL_LIBS),$(BINARYDIR)/$(notdir $(lib)))
 

@@ -5,25 +5,25 @@
 BINARYDIR := Debug
 
 #Toolchain
-CC := arm-linux-gcc
-CXX := arm-linux-g++
+CC := gcc
+CXX := g++
 LD := $(CXX)
 AR := ar
 OBJCOPY := objcopy
 
 #Additional flags
 PREPROCESSOR_MACROS := DEBUG
-INCLUDE_DIRS := 
-LIBRARY_DIRS := 
-LIBRARY_NAMES := 
-ADDITIONAL_LINKER_INPUTS := 
-MACOS_FRAMEWORKS := 
+INCLUDE_DIRS :=
+LIBRARY_DIRS :=
+LIBRARY_NAMES :=
+ADDITIONAL_LINKER_INPUTS :=
+MACOS_FRAMEWORKS :=
 
 CFLAGS := -ggdb -ffunction-sections -O0
 CXXFLAGS := -ggdb -ffunction-sections -O0
-ASFLAGS := 
+ASFLAGS :=
 LDFLAGS := -Wl,-gc-sections
-COMMONFLAGS := 
+COMMONFLAGS :=
 
 START_GROUP := -Wl,--start-group
 END_GROUP := -Wl,--end-group

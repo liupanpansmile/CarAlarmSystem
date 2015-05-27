@@ -1,25 +1,25 @@
-﻿生成启动时间为 2015/5/20 11:13:06。
-     1>项目“D:\TaxiAlarmSystem\TaxiAlarmSystem\TaxiAlarmSystem.vcxproj”在节点 2 上(Build 个目标)。
-     1>Build:
-         "D:\software_install\study_software\visual GDB\\VisualGDB.exe" /build "D:\TaxiAlarmSystem\TaxiAlarmSystem\TaxiAlarmSystem.vcxproj" "/solution:D:\TaxiAlarmSystem\TaxiAlarmSystem.sln" "/config:Debug" "/platform:Win32"
+﻿生成启动时间为 2015/5/27 14:10:54。
+     1>项目“D:\work\CarAlarmSystem\TaxiAlarmSystem\TaxiAlarmSystem.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>Rebuild:
+         "D:\software_install\study_software\visual GDB\\VisualGDB.exe" /rebuild "D:\work\CarAlarmSystem\TaxiAlarmSystem\TaxiAlarmSystem.vcxproj" "/solution:D:\work\CarAlarmSystem\TaxiAlarmSystem.sln" "/config:Debug" "/platform:Win32"
          VisualGDB: Attempting inline build...
-         VisualGDB: Updated source file list in D:\TaxiAlarmSystem\TaxiAlarmSystem\Makefile. Enable verbose mode for more details.
-         VisualGDB: Sending 19 updated source files to build machine...
+         VisualGDB: Executing preclean actions
+         VisualGDB: Run "make CONFIG=Debug clean" in directory "/tmp/VisualGDB/d/work/CarAlarmSystem/TaxiAlarmSystem" on root@192.168.95.130 (SSH)
+         rm -rf Debug
+         VisualGDB: Executing postclean actions
+         VisualGDB: Sending 31 updated source files to build machine...
          VisualGDB: Executing prebuild actions
-         VisualGDB: Run "make CONFIG=Debug" in directory "/tmp/VisualGDB/d/TaxiAlarmSystem/TaxiAlarmSystem" on root@192.168.95.129 (SSH)
-         mkdir Debug
-         arm-linux-gcc -ggdb -ffunction-sections -O0   -DDEBUG  -c gps.c -o Debug/gps.o -MD -MF Debug/gps.dep
-         make: arm-linux-gcc: Command not found
-         make: *** [Debug/gps.o] Error 127
+         VisualGDB: Run "make CONFIG=Debug" in directory "/tmp/VisualGDB/d/work/CarAlarmSystem/TaxiAlarmSystem" on root@192.168.95.130 (SSH)
+         make: *** No rule to make target `CASys.pro', needed by `Makefile'.  Stop.
          -------------------------------------------------------------
          Command exited with code 2
          Executable: make
          Arguments: CONFIG=Debug
-         Directory: /tmp/VisualGDB/d/TaxiAlarmSystem/TaxiAlarmSystem
+         Directory: /tmp/VisualGDB/d/work/CarAlarmSystem/TaxiAlarmSystem
      1>EXEC : error : Build has failed. See the Output window for more details.
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.MakeFile.Targets(38,5): error MSB3073: 命令“"D:\software_install\study_software\visual GDB\\VisualGDB.exe" /build "D:\TaxiAlarmSystem\TaxiAlarmSystem\TaxiAlarmSystem.vcxproj" "/solution:D:\TaxiAlarmSystem\TaxiAlarmSystem.sln" "/config:Debug" "/platform:Win32"”已退出，代码为 1。
-     1>已完成生成项目“D:\TaxiAlarmSystem\TaxiAlarmSystem\TaxiAlarmSystem.vcxproj”(Build 个目标)的操作 - 失败。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.MakeFile.Targets(43,5): error MSB3073: 命令“"D:\software_install\study_software\visual GDB\\VisualGDB.exe" /rebuild "D:\work\CarAlarmSystem\TaxiAlarmSystem\TaxiAlarmSystem.vcxproj" "/solution:D:\work\CarAlarmSystem\TaxiAlarmSystem.sln" "/config:Debug" "/platform:Win32"”已退出，代码为 1。
+     1>已完成生成项目“D:\work\CarAlarmSystem\TaxiAlarmSystem\TaxiAlarmSystem.vcxproj”(Rebuild 个目标)的操作 - 失败。
 
 生成失败。
 
-已用时间 00:00:03.90
+已用时间 00:00:11.22

@@ -1,8 +1,11 @@
 #ifndef   _MACRO_LogModule
 #define   _MACRO_LogModule
+
+
 #include <stdio.h>
+#include <stdbool.h>
 #include <pthread.h>
- #include<unistd.h>  
+#include<unistd.h>  
 #include "macro_define.h"
 
 /* 每个线程的buffer size*/
@@ -52,4 +55,5 @@ int  loggetlevel(char *level);
 bool loginit(LogLevel l, const  char *filelocation);
 bool logwrite_init();
 bool logclose();
+
 #endif

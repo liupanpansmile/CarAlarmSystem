@@ -65,9 +65,6 @@
     <ClCompile Include="utils.cpp">
       <Filter>src\utils</Filter>
     </ClCompile>
-    <ClCompile Include="log.cpp">
-      <Filter>src\log</Filter>
-    </ClCompile>
     <ClCompile Include="minIni.cpp">
       <Filter>src\ini</Filter>
     </ClCompile>
@@ -76,6 +73,9 @@
     </ClCompile>
     <ClCompile Include="config.cpp">
       <Filter>src\config</Filter>
+    </ClCompile>
+    <ClCompile Include="log.c">
+      <Filter>src\log</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

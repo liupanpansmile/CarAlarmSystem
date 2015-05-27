@@ -73,7 +73,7 @@ CASys::CASys(QWidget *parent) :
 	//   datetime_timer = new QTimer(this) ;
 	//   connect(datetime_timer,SIGNAL(timeout()),this,SLOT(showDateTime())) ;
 	//    datetime_timer->start(1000) ;
-	
+
 }
 
 CASys::~CASys()
@@ -110,7 +110,7 @@ void CASys::closeEvent(QCloseEvent *event)
 	v4l_munmap(&v4l_dev0) ;
 	v4l_close(&v4l_dev0);
 	event->accept();
-	log_debug("close event") ;
+	//log_debug("close event") ;
 }
 
 void CASys::showDateTime()
@@ -155,29 +155,29 @@ void CASys::deal_request()
 	write_data(allInfo->filename,v4l_dev0.buffer,MAX_WIDTH,MAX_HEIGHT) ;
 
 	get_gps( &(allInfo->gps_info) ) ;             //获取GPS信息
-	
+
 	//发送信息至服务器端
 	int is_safe_now =  send_to_server(allInfo,serverIP,port);		//发送数据至服务器端
 
 	if(is_safe_now == DANGER )
 	{
-		log_info("you are in danger now ! ") ;
+		//log_info("you are in danger now ! ") ;
 
 		this->ui->LblSafeOrNot->setText("<font color=red>危险</font>");
 		this->ui->LblSafeOrNot->setFont(QFont("simsun",36));
 	}
 	else if(is_safe_now == SAFE )
 	{
-		log_info("you are safe now !\n ") ;
+		//log_info("you are safe now !\n ") ;
 		this->ui->LblSafeOrNot->setText("安全");
 		this->ui->LblSafeOrNot->setFont(QFont("simsun",36));
 	}
 	else if(is_safe_now == CALL_POLICE_RET )
 	{
-		log_info("You have call police,And the rescue is coming  !") ;
+		//log_info("You have call police,And the rescue is coming  !") ;
 		this->ui->LblSafeOrNot->setText("正在救援");
 		this->ui->LblSafeOrNot->setFont(QFont("simsun",36));
 
 	}
-	log_debug("deal request  end...\n") ;
+	//log_debug("deal request  end...\n") ;
 }

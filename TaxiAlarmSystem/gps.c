@@ -8,6 +8,7 @@
 #include <unistd.h>
 
 #include "gps.h"
+
 #include "log.h"
 
 #define FALSE 0

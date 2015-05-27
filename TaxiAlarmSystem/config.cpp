@@ -1,5 +1,11 @@
 #include "comm.h"
+
+#ifdef __cplusplus
+extern "C" {
 #include "log.h"
+}
+#endif
+
 #include "minIni.h"
 #include "config.h"
 #include <string.h>

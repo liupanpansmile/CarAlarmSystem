@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "rgb2bmp.h"
+
 #include "log.h"
 
 /****************************
@@ -16,7 +17,7 @@ fp1               :所存放的文件
 *****************************/
 int RGB2BMP(char *rgb_buffer,int nWidth,int nHeight,FILE*fp1)
 {
-    log_debug("RGB to BMP... ") ;
+	log_debug("RGB to BMP... ") ;
 
 	BmpHead m_BMPHeader;     
 	InfoHead  m_BMPInfoHeader ;  
@@ -77,7 +78,7 @@ int RGB2BMP(char *rgb_buffer,int nWidth,int nHeight,FILE*fp1)
 ************************************************************/
 int  write_data(char *filename,unsigned char *rgb_buffer,int width,int height)
 {   
-    log_debug("begin to save %s picture \n",filename) ;
+	log_debug("begin to save %s picture \n",filename) ;
 
 	FILE* fp;
 	long nData = width*height;
@@ -91,37 +92,29 @@ int  write_data(char *filename,unsigned char *rgb_buffer,int width,int height)
 
 	if(pVisit == NULL)
 	{
-		printf("malloc failed \n") ;
+		log_error("malloc failed \n") ;
 		exit(0) ;
 	}
-  //  printf("malloc success \n") ;
-
 	if((fp =fopen(filename,"wb")) == NULL) 
 	{
-		printf("cannot open %s \n",filename) ;
+		log_error("cannot open %s \n",filename) ;
 		return -1 ;
 	}
-
- //   printf("open file %s success \n",filename) ;
- //   printf("rgb_buffer = %p \n",rgb_buffer) ;
-    while(i<total)
+	while(i<total)
 	{
-        *pVisit = *rgb_buffer ;
-       rgb_buffer++;
-        pVisit++ ;
-        //equal to -->     *pVisit++ = *rgb_buffer++ ;
+		*pVisit = *rgb_buffer ;
+		rgb_buffer++;
+		pVisit++ ;   //equal to -->     *pVisit++ = *rgb_buffer++ ;
 		i++;
 	}
 
-    RGB2BMP((char *)tmp,width,height,fp);
+	RGB2BMP((char *)tmp,width,height,fp);
 	if(NULL != init_address )
 	{
 		free(init_address );
 		init_address  = NULL ;
 	}
 	fclose(fp);
- //   printf("delete end \n") ;
-
 	return 0;
 }
 

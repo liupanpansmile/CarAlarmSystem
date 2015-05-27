@@ -7,7 +7,7 @@
       <PathStyle>MinGWUnixSlash</PathStyle>
     </CustomSourceDirectories>
     <BuildHost>
-      <HostName>192.168.95.129</HostName>
+      <HostName>192.168.95.130</HostName>
       <Transport>SSH</Transport>
       <UserName>root</UserName>
     </BuildHost>
@@ -16,7 +16,7 @@
       <RemoteHost>
         <HostName>192.168.95.129</HostName>
         <Transport>SSH</Transport>
-        <UserName>root</UserName>
+        <UserName>neusoft</UserName>
       </RemoteHost>
       <LocalDirectory>$(ProjectDir)</LocalDirectory>
       <RemoteDirectory>/tmp/VisualGDB/$(ProjectDirUnixStyle)</RemoteDirectory>
@@ -37,8 +37,9 @@
   <Build xsi:type="com.visualgdb.build.make">
     <MakeFilePathRelativeToSourceDir>Makefile</MakeFilePathRelativeToSourceDir>
     <MakeConfigurationName>Debug</MakeConfigurationName>
+    <AdditionalMakeArguments />
     <Toolchain>
-      <Name>Default GCC toolchain on 192.168.95.129</Name>
+      <Name>Default GCC toolchain on 192.168.95.130</Name>
       <UnixSystem>true</UnixSystem>
       <GCC>gcc</GCC>
       <GXX>g++</GXX>
@@ -70,7 +71,7 @@
     <MakeCommandTemplate>
       <SkipWhenRunningCommandList>false</SkipWhenRunningCommandList>
       <RemoteHost>
-        <HostName>192.168.95.129</HostName>
+        <HostName>192.168.95.130</HostName>
         <Transport>SSH</Transport>
         <UserName>root</UserName>
       </RemoteHost>
@@ -115,23 +116,17 @@
       <ExamineRegistersInRawFormat>true</ExamineRegistersInRawFormat>
     </AdditionalGDBSettings>
     <LaunchGDBSettings xsi:type="GDBLaunchParametersNewInstance">
-      <GDBEnvironment>
-        <Records>
-          <Record>
-            <VariableName>LANG</VariableName>
-            <Value>en_US.UTF-8</Value>
-          </Record>
-        </Records>
-      </GDBEnvironment>
       <DebuggedProgram>$(TargetPath)</DebuggedProgram>
       <GDBServerPort>2000</GDBServerPort>
       <ProgramArguments />
     </LaunchGDBSettings>
     <GenerateCtrlBreakInsteadOfCtrlC>false</GenerateCtrlBreakInsteadOfCtrlC>
+    <DeploymentTargetPath />
     <X11WindowMode>Local</X11WindowMode>
     <KeepConsoleAfterExit>false</KeepConsoleAfterExit>
     <RunGDBUnderSudo>false</RunGDBUnderSudo>
     <SkipDeployment>false</SkipDeployment>
+    <LdLibraryPath />
   </Debug>
   <CustomBuild>
     <PreBuildActions />

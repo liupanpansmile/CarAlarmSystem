@@ -83,6 +83,7 @@
 #define unix 1
 #define __i386__ 1
 #define __SIZE_TYPE__ unsigned int
+#define DEBUG 1
 #define __ELF__ 1
 #define __FLT_RADIX__ 2
 #define __LDBL_EPSILON__ 1.08420217248550443401e-19L
@@ -139,7 +140,6 @@
 #define __LDBL_DIG__ 18
 #define __GNUC_GNU_INLINE__ 1
 #define _GNU_SOURCE 1
-#define DEBUG 
 #endif
 
 // --- Include directories begin --- //
