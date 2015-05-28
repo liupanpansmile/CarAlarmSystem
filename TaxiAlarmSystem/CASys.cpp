@@ -16,6 +16,11 @@
 #define 	DANGER 0
 #define     CALL_POLICE_RET     3
 
+static void DEBUG_PRINT_ALLINFO(AllInfo *allInfo)
+{
+	log_debug("pictureName = %s , DriverName =%s ,Telephone = %s ,plateNumber =%s \n",allInfo->filename,allInfo->car_info.driverName,allInfo->car_info.driverTelNumber,allInfo->car_info.plateNumber) ;
+}
+
 
 void CASys::Init()
 {
@@ -28,6 +33,7 @@ void CASys::Init()
 		strcpy(allInfo->car_info.plateNumber,config->PlateNumber()) ;			//车牌号
 		strcpy(serverIP,config->Host()) ;										
 		port = config->Port() ;
+		DEBUG_PRINT_ALLINFO(allInfo) ;
 	}
 }
 
@@ -36,11 +42,10 @@ CASys::CASys(QWidget *parent) :
 	ui(new Ui::CASys)
 {
 	ui->setupUi(this);
-
 	allInfo = new AllInfo() ;          
 	config = new Config() ;
-	Init() ;						/*初始化车相关信息*/
 
+	Init() ;						/*初始化车相关信息*/
 
 	/*设置设备信息*/
 	v4l_open(DEFAULT_DEVICE, &v4l_dev0) ;/*打开设备*/

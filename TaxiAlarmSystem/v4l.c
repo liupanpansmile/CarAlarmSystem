@@ -9,11 +9,8 @@
 */
 
 #include "v4l.h"
-//#ifdef __cplusplus
-//extern "C" {
-//#include "log.h"
-//}
-//#endif
+#include "log.h"
+
 /*********************************************************************
 * 函数名:v4l_open
 * 功  能: 打开设备
@@ -32,11 +29,11 @@ int v4l_open(const char *dev, v4l_device *vd )
 
 	if( ( vd->fd = open( dev, O_RDWR ) )  < 0 )
 	{
-		//log_error( "v4l_open error" );
+		log_error( "v4l_open error" );
 		return -1;
 	}
 	vd->picture.palette=VIDEO_PALETTE_RGB565;
-	//log_debug( "open v4l ok \n" );
+	log_debug( "open v4l ok \n" );
 	return 0;
 }
 
@@ -52,7 +49,7 @@ int v4l_get_capability( v4l_device *vd )
 {
 	if( ioctl( vd->fd, VIDIOCGCAP, &( vd->capability ) ) <0 )
 	{
-		//log_error( "v4l_get_capability failed ");
+		log_error( "v4l_get_capability failed ");
 		return -1 ;
 	}
 	/*
@@ -77,7 +74,7 @@ int v4l_get_picture( v4l_device *vd )
 {
 	if( ioctl( vd->fd,VIDIOCGPICT,&( vd->picture ) ) < 0 )
 	{
-		//log_error("get picture properties failed") ;
+		log_error("get picture properties failed") ;
 		return -1;
 	} 
 	/*
@@ -101,7 +98,7 @@ int v4l_set_picture( v4l_device *vd )
 {
 	if( ioctl( vd->fd, VIDIOCSPICT, &( vd->picture ) ) < 0 )
 	{
-		//log_error("set picture properties failed") ;
+		log_error("set picture properties failed") ;
 		return -1;
 	}
 	return 0;
@@ -124,7 +121,7 @@ int v4l_get_channels( v4l_device *vd )
 
 		if( ioctl( vd->fd , VIDIOCGCHAN, &( vd->channel[i] ) ) <0 )
 		{
-			//log_debug( "v4l_get_channel failed" );
+			log_debug( "v4l_get_channel failed" );
 			return -1;
 		}
 	}
@@ -143,7 +140,7 @@ int v4l_get_window(v4l_device *vd)
 {
 	if( ioctl( vd->fd, VIDIOCGWIN, &( vd->window ) ) < 0 )
 	{
-		//log_error("get the video overlay  window failed") ;
+		log_error("get the video overlay  window failed") ;
 		return -1;
 	}
 	return 0;
@@ -162,13 +159,13 @@ int v4l_get_mbuf( v4l_device *vd )
 {
 	if( ioctl( vd->fd,VIDIOCGMBUF,&( vd->mbuf ) ) <0 )
 	{
-		//log_error( "memory map buffer info failed" );
+		log_error( "memory map buffer info failed" );
 		return -1;
 	}
 	if( ( vd->map = ( unsigned char * )mmap( 0, vd->mbuf.size, 
 		PROT_READ | PROT_WRITE, MAP_SHARED, vd->fd, 0 ) ) < 0 )
 	{
-		//log_error("v4l_mmap_init:mmap");
+		log_error("v4l_mmap_init:mmap");
 		return -1;
 	}
 	return 0 ;
@@ -183,7 +180,7 @@ int v4l_get_mbuf( v4l_device *vd )
 */
 int v4l_init_mbuf(v4l_device *vd)
 {
-	//log_debug("init v4l mbuf") ;
+	log_debug("init v4l mbuf") ;
 	//vd->mmap.frame = 10 ; 
 	vd->mmap.width = MAX_WIDTH;
 	vd->mmap.height = MAX_HEIGHT;
@@ -214,11 +211,11 @@ unsigned char *v4l_get_address(v4l_device *vd)
 */
 int v4l_grab_frame(v4l_device *vd, int frame)
 {
-   //log_debug("begin grab_frame\n");
+   log_debug("begin grab_frame\n");
 	if (vd->frame_using[frame]) 
 	{
 	//	fprintf(stderr, "v4l_grab_frame: frame %d is already used.\n", frame);
-		//log_error("v4l_grab_frame: frame %d is already used.", frame);
+		log_error("v4l_grab_frame: frame %d is already used.", frame);
 		return -1;
 	}
 
@@ -232,7 +229,7 @@ int v4l_grab_frame(v4l_device *vd, int frame)
 
 	vd->frame_using[frame] = 1;
 	vd->frame_current = frame;
-	//log_debug("end grab frame") ;
+	log_debug("end grab frame") ;
 	return 0;    
 }
 
@@ -243,13 +240,13 @@ int v4l_grab_frame(v4l_device *vd, int frame)
 */
 int v4l_grab_sync(v4l_device *vd)
 {
-	//log_debug("begin  grab_sync");
+	log_debug("begin  grab_sync");
 	if (ioctl(vd->fd, VIDIOCSYNC, &(vd->frame_current)) < 0) 
 	{
 		perror("v4l_grab_sync");
 	}
 	vd->frame_using[vd->frame_current] = 0;
-	//log_debug("end grab_sync\n");
+	log_debug("end grab_sync\n");
 	return 0;
 }
 
@@ -261,7 +258,7 @@ int v4l_munmap( v4l_device *vd )
 {
 	if ( munmap( vd->map, vd->mbuf.size ) < 0 ) 
 	{
-		//log_error( "v4lmunmap:munmap");
+		log_error( "v4lmunmap:munmap");
 		return -1;
 	}
 
@@ -274,7 +271,7 @@ int v4l_munmap( v4l_device *vd )
 */
 int v4l_close(v4l_device *vd)
 {
-	//log_debug("close v4l") ;
+	log_debug("close v4l") ;
 	close(vd->fd);   
 	return 0;
 }

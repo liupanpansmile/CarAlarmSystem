@@ -11,7 +11,7 @@ extern "C" {
 #include <string.h>
 #include <stdlib.h>
 
-const char *Config::CONFIGFILE = "/etc/oneapm/oneMe.cfg";
+const char *Config::CONFIGFILE = "./oneMe.cfg";
 const char *Config::HOST = "tpm.oneapm.com";
 const char *Config::LOGLEVEL = "info";
 const char *Config::LOGFILE = "/var/log/oneapm/oneMe.log";
