@@ -11,15 +11,16 @@
 #include "v4l.h"
 #include "send_data.h"
 
+#ifdef  __cplusplus
+extern "C" {
+#include "log.h"
+}
+#endif
 
 #define 	SAFE  1
 #define 	DANGER 0
 #define     CALL_POLICE_RET     3
 
-static void DEBUG_PRINT_ALLINFO(AllInfo *allInfo)
-{
-	log_debug("pictureName = %s , DriverName =%s ,Telephone = %s ,plateNumber =%s \n",allInfo->filename,allInfo->car_info.driverName,allInfo->car_info.driverTelNumber,allInfo->car_info.plateNumber) ;
-}
 
 
 void CASys::Init()
@@ -33,7 +34,6 @@ void CASys::Init()
 		strcpy(allInfo->car_info.plateNumber,config->PlateNumber()) ;			//车牌号
 		strcpy(serverIP,config->Host()) ;										
 		port = config->Port() ;
-		DEBUG_PRINT_ALLINFO(allInfo) ;
 	}
 }
 

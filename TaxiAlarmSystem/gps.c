@@ -213,8 +213,8 @@ static void get_char_array(char *s,char *buf)
     int i;
 
     i=GetComma(1,s);   //获取首次出现逗号的下一个字符的下标，即要获取字符的长度
-    strncpy(buf,s,i);
-    buf[i]=0;
+    strncpy(buf,s,i-1);
+    buf[i-1]='\0';
 }
 
 
